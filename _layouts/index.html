@@ -1,0 +1,39 @@
+{% include header.html %}
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            {% for post in site.posts limit:4 %}
+                {% if post.categories contains 'recommendation' and post.image %}
+                    <div class="col-md-3 text-center">
+                        <a href="{{post.url}}" title="{{post.title}}">
+                            <img src="{{post.image}}" alt="{{post.title}}" width="263" class="img-thumbnail"/>
+                        </a>
+                        <a href="{{post.url}}" title="{{post.title}}"><h5 class="text-muted">{{post.title}}</h5></a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">{{ content }}</div>
+        <div class="col-md-3">
+            <h3>热门标签</h3>
+            <hr/>
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Messages</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Messages</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Messages</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% include footer.html %}

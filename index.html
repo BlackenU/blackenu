@@ -1,0 +1,18 @@
+---
+layout: index
+title: 首页 - ShareDemo
+---
+{% for post in site.posts %}
+	<div class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="{{post.url}}" title="{{post.title}}">
+					<img src="{{post.image}}" alt="{{post.title}}" width="221" />
+				</a>
+			</div>
+			<div class="panel-footer">
+				<a href="{{post.url}}" title="{{post.title}}"><h5 class="text-muted">{{post.title}}</h5></a>
+			</div>
+		</div>
+	</div>
+{% endfor %}
